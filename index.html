@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AltLive | Diagnóstico MVP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="intro-card" id="introCard">
+      <span class="eyebrow">MVP interno</span>
+      <h1>Diagnóstico de Personalidade no Emagrecimento</h1>
+      <p>
+        Este protótipo existe para validar três pontos: se a pontuação faz sentido, se o tipo
+        final parece coerente e se o relatório final gera reconhecimento real.
+      </p>
+      <div class="intro-grid">
+        <article>
+          <h2>Como responder</h2>
+          <p>Leia cada afirmação e marque o quanto ela combina com você hoje.</p>
+        </article>
+        <article>
+          <h2>Escala</h2>
+          <p>Use de <strong>1</strong> a <strong>7</strong>, de “discordo totalmente” a “concordo totalmente”.</p>
+        </article>
+        <article>
+          <h2>Estrutura</h2>
+          <p>São <strong>36 afirmações</strong>, divididas em <strong>6 blocos</strong>.</p>
+        </article>
+      </div>
+      <button class="primary-button" id="startButton" type="button">Começar teste</button>
+    </section>
+
+    <section class="questionnaire hidden" id="questionnaire">
+      <header class="questionnaire-header">
+        <div>
+          <span class="eyebrow" id="stepLabel">Bloco 1 de 6</span>
+          <h1 id="blockTitle">Como Você Entra no Processo</h1>
+          <p id="blockDescription">Marque o quanto cada afirmação combina com você.</p>
+        </div>
+        <div class="progress-wrap" aria-hidden="true">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <span id="progressText">17%</span>
+        </div>
+      </header>
+
+      <form id="questionForm" novalidate>
+        <div id="questionsContainer" class="questions-container"></div>
+        <p class="validation-message hidden" id="validationMessage">Responda todas as afirmações deste bloco para continuar.</p>
+
+        <div class="form-actions">
+          <button class="secondary-button" id="backButton" type="button">Voltar</button>
+          <button class="primary-button" id="nextButton" type="submit">Próximo bloco</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="result hidden" id="resultSection">
+      <header class="result-header">
+        <div>
+          <span class="eyebrow">Resultado do teste</span>
+          <h1 id="typeName">Capitã</h1>
+          <p class="type-code" id="typeCode">IRLE</p>
+          <p class="type-opening" id="typeOpening"></p>
+        </div>
+        <button class="secondary-button" id="restartButton" type="button">Refazer teste</button>
+      </header>
+
+      <section class="axis-section">
+        <h2>Seus eixos principais</h2>
+        <div class="axis-grid" id="axisGrid"></div>
+      </section>
+
+      <section class="report-section" id="reportSection"></section>
+
+      <details class="debug-card">
+        <summary>Base da pontuação</summary>
+        <div id="scoringDetails" class="scoring-details"></div>
+      </details>
+    </section>
+  </main>
+
+  <script src="report-blueprints.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
